@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:6
+      - image: circleci/node:7
     steps:
       - checkout
       - restore_cache: # special step to restore the dependency cache
@@ -15,5 +15,5 @@ jobs:
           paths:
             - ./node_modules
       - run: # run tests
-          name: Run Test and Coverage
+          name: Run Test
           command: yarn test
